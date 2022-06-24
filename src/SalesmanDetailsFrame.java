@@ -1,4 +1,5 @@
 
+import static com.oracle.jrockit.jfr.ContentType.Address;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,18 +14,20 @@ import javax.swing.table.DefaultTableModel;
  * @author Asus
  */
 public class SalesmanDetailsFrame extends javax.swing.JFrame {
+    private String Blood_Group;
 
     /**
      * Creates new form CoustomerDetailsFrame
      */
     public SalesmanDetailsFrame() {
         initComponents();
+        this.getRootPane().setDefaultButton(SearchButton);
         showShopSalesmanTable();
     }
     
         private void showShopSalesmanTable()
     {
-        String columnNames[] ={"Id","Name","Email","Address","Blood_Group","Phone_No","Password"};
+        String columnNames[] ={"Id","User_Name","Name","Email","Address","Blood_Group","Phone_No","Password","Salary"};
         DefaultTableModel SalesmantableModel = new DefaultTableModel(columnNames,0);
         String query = "select * from salesmandetails;";
         try{
@@ -33,14 +36,18 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
         //for showing the table
         while(rs.next())
         {
+            
         String Id = rs.getString("Id");
+        String User_Name = rs.getString("User_Name");   
         String Name = rs.getString("Name");
         String Email = rs.getString("Email");
         String Address = rs.getString("Address");
         String Blood_Group = rs.getString("Blood_Group");
         String Phone_No = rs.getString("Phone_No");
         String Password = rs.getString("Password");
-        String data[]={Id,Name,Email,Address,Blood_Group,Phone_No,Password};
+        String Salary = rs.getString("Salary");
+   
+        String data[]={Id,User_Name,Name,Email,Address,Blood_Group,Phone_No,Password,Salary};
         SalesmantableModel.addRow(data);
         }
         SalesManTable.setModel(SalesmantableModel);
@@ -60,12 +67,33 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        DeleteButton = new javax.swing.JButton();
+        UpdateButton = new javax.swing.JButton();
+        addbutton = new javax.swing.JButton();
+        address = new javax.swing.JLabel();
+        addressTextField1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        blood = new javax.swing.JTextField();
+        passwordjTextField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        name = new javax.swing.JTextField();
+        UserName = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        Salary = new javax.swing.JLabel();
+        salary = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        email = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        SearchButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         SalesManTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -79,38 +107,160 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "IIUC SUPERSHOP --SalesMan Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 13))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel1.setText("SalesMan Details");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/banerlogo.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(201, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(184, 184, 184))
+                .addGap(351, 351, 351)
+                .addComponent(jLabel2)
+                .addContainerGap(479, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jLabel1))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 100));
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        DeleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete.png"))); // NOI18N
+        DeleteButton.setText("Delete");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
+            }
+        });
+        jPanel4.add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 610, -1, -1));
+
+        UpdateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/updat.png"))); // NOI18N
+        UpdateButton.setText("Update");
+        UpdateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateButtonActionPerformed(evt);
+            }
+        });
+        jPanel4.add(UpdateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 610, -1, -1));
+
+        addbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save.png"))); // NOI18N
+        addbutton.setText("Save");
+        addbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addbuttonActionPerformed(evt);
+            }
+        });
+        jPanel4.add(addbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 610, -1, -1));
+
+        address.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        address.setText("Address:");
+        jPanel4.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, -1, -1));
+        jPanel4.add(addressTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 230, -1));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel7.setText("Blood Group:");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, -1, -1));
+
+        blood.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloodActionPerformed(evt);
+            }
+        });
+        jPanel4.add(blood, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 500, 295, -1));
+
+        passwordjTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordjTextFieldActionPerformed(evt);
+            }
+        });
+        jPanel4.add(passwordjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 295, -1));
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setText("Password:");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel8.setText("Name:");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 380, -1, -1));
+
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+        jPanel4.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, 295, -1));
+
+        UserName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserNameActionPerformed(evt);
+            }
+        });
+        jPanel4.add(UserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 230, -1));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel4.setText("User_Name:");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
+
+        Salary.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        Salary.setText("Salary:");
+        jPanel4.add(Salary, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, -1, -1));
+        jPanel4.add(salary, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 230, -1));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setText("E-mail:");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, -1, -1));
+        jPanel4.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, 230, -1));
+        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 119, 33));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setText("ID NO");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
+
+        SearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/searchicon.png"))); // NOI18N
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchButtonActionPerformed(evt);
+            }
+        });
+        jPanel4.add(SearchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 49, -1));
+
+        SalesManTable.setBackground(new java.awt.Color(204, 204, 255));
+        SalesManTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "User_Name", "Name", "E-mail", "Address", "Blood ", "Phone", "Password", "Salary"
+            }
+        ));
+        jScrollPane1.setViewportView(SalesManTable);
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1030, 190));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("SalesMan Details");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backbuton.png"))); // NOI18N
@@ -120,59 +270,109 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        SalesManTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(SalesManTable);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginback6grad.png"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 690));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton1)
-                .addGap(0, 565, Short.MAX_VALUE))
-            .addComponent(jScrollPane1)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1040, 670));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          this.setVisible(false);
-        new ShopHome().setVisible(true);
+        new ShopMainHome().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        String Id = jTextField1.getText();
+        String query = "select * from salesmandetails where Id= "+Id;
+
+        try{
+            ResultSet rs = DBUTILS.queryExecute(query);
+            if(rs.next())
+            {
+                UserName.setText(rs.getString("User_Name"));
+                name.setText(rs.getString("Name"));
+                passwordjTextField.setText(rs.getString("Password"));
+                email.setText(rs.getString("Email"));
+                salary.setText(rs.getString("Salary"));
+                blood.setText(rs.getString("Blood_Group"));
+                addressTextField1.setText(rs.getString("Address"));
+            }
+        }catch(Exception e){
+        }
+    }//GEN-LAST:event_SearchButtonActionPerformed
+
+    private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UserNameActionPerformed
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameActionPerformed
+
+    private void passwordjTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordjTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordjTextFieldActionPerformed
+
+    private void bloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloodActionPerformed
+
+    private void addbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbuttonActionPerformed
+
+        String User_Name = UserName.getText();
+
+        String Name = name.getText();
+        String Blood = blood.getText();
+        String Email = email.getText();
+        String Address = addressTextField1.getText();
+
+        String Password = passwordjTextField.getText();
+        String Salary = salary.getText();
+
+        String query ="insert into salesmandetails(User_Name,Name,Blood_Group,Address,Password,Salary,Email) values ('"+User_Name+"','"+Password+"','"+Salary+"','"+Name+"','"+Address+"','"+Blood_Group+"','"+Email+"')";
+
+        try{
+            int rs = DBUTILS.queryUpdate(query);
+        }catch(Exception e){
+
+        }
+        showShopSalesmanTable();
+    }//GEN-LAST:event_addbuttonActionPerformed
+
+    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
+        String User_Name = UserName.getText();
+        String Password = passwordjTextField.getText();
+        String Email = email.getText();
+        String Salary = salary.getText();
+
+        String Id = jTextField1.getText();
+        String query ="update salesmandetails SET User_Name='"+User_Name+"',Password='"+Password+"',Email='"+Email+"',Salary='"+Salary+"' where Id ="+Id;
+
+        try{
+            int rs = DBUTILS.queryUpdate(query);
+        }catch(Exception e){
+
+        }
+        showShopSalesmanTable();
+    }//GEN-LAST:event_UpdateButtonActionPerformed
+
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        String Id = jTextField1.getText();
+        String query = "delete from salesmandetails where Id = " +Id;
+
+        try{
+            int rs = DBUTILS.queryUpdate(query);
+        }catch(Exception e){
+
+        }
+        showShopSalesmanTable();
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,13 +410,34 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeleteButton;
+    private javax.swing.JLabel Salary;
     private javax.swing.JTable SalesManTable;
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JButton UpdateButton;
+    private javax.swing.JTextField UserName;
+    private javax.swing.JButton addbutton;
+    private javax.swing.JLabel address;
+    private javax.swing.JTextField addressTextField1;
+    private javax.swing.JTextField blood;
+    private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField passwordjTextField;
+    private javax.swing.JTextField salary;
     // End of variables declaration//GEN-END:variables
 }
