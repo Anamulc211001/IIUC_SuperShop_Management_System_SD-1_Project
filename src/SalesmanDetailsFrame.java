@@ -136,6 +136,7 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
 
         DeleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete.png"))); // NOI18N
         DeleteButton.setText("Delete");
+        DeleteButton.setOpaque(false);
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteButtonActionPerformed(evt);
@@ -145,6 +146,7 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
 
         UpdateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/updat.png"))); // NOI18N
         UpdateButton.setText("Update");
+        UpdateButton.setOpaque(false);
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateButtonActionPerformed(evt);
@@ -155,6 +157,7 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
         addbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save.png"))); // NOI18N
         addbutton.setText("Save");
         addbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addbutton.setOpaque(false);
         addbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addbuttonActionPerformed(evt);
@@ -226,7 +229,8 @@ public class SalesmanDetailsFrame extends javax.swing.JFrame {
         jLabel3.setText("ID NO");
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
-        SearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/searchicon.png"))); // NOI18N
+        SearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/searchbut.png"))); // NOI18N
+        SearchButton.setOpaque(false);
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchButtonActionPerformed(evt);

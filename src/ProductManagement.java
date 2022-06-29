@@ -92,7 +92,9 @@ public class ProductManagement extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
         jPanel1.setToolTipText("");
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setMaximumSize(new java.awt.Dimension(1454, 828));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1454, 828));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -169,7 +171,8 @@ public class ProductManagement extends javax.swing.JFrame {
         jLabel3.setText("Product No");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
-        SearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/searchicon.png"))); // NOI18N
+        SearchButton.setBackground(new java.awt.Color(255, 255, 51));
+        SearchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/searchbut.png"))); // NOI18N
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchButtonActionPerformed(evt);
@@ -211,6 +214,7 @@ public class ProductManagement extends javax.swing.JFrame {
 
         UpdateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/updat.png"))); // NOI18N
         UpdateButton.setText("Update");
+        UpdateButton.setOpaque(false);
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateButtonActionPerformed(evt);
@@ -220,6 +224,7 @@ public class ProductManagement extends javax.swing.JFrame {
 
         DeleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete.png"))); // NOI18N
         DeleteButton.setText("Delete");
+        DeleteButton.setOpaque(false);
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteButtonActionPerformed(evt);
@@ -227,6 +232,7 @@ public class ProductManagement extends javax.swing.JFrame {
         });
         jPanel2.add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
 
+        addbutton.setBackground(new java.awt.Color(204, 204, 204));
         addbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save.png"))); // NOI18N
         addbutton.setText("Save");
         addbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -270,7 +276,7 @@ public class ProductManagement extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

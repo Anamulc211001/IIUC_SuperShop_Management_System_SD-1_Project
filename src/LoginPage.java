@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
@@ -39,17 +40,18 @@ public class LoginPage extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         jRadioButton1 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         usernameTextField = new javax.swing.JTextField();
         passwordTextField = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -74,6 +76,8 @@ public class LoginPage extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
 
+        jLabel1.setText("jLabel1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -84,53 +88,66 @@ public class LoginPage extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(0, 51, 51));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/enterbut1.png"))); // NOI18N
         jButton2.setText("Login");
+        jButton2.setOpaque(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, -1, 21));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, -1, 21));
 
+        usernameTextField.setForeground(new java.awt.Color(153, 153, 153));
+        usernameTextField.setText("username");
+        usernameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usernameTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usernameTextFieldFocusLost(evt);
+            }
+        });
         usernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameTextFieldActionPerformed(evt);
             }
         });
-        jPanel2.add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 260, -1));
-        jPanel2.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 260, -1));
+        jPanel2.add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 260, 30));
+
+        passwordTextField.setForeground(new java.awt.Color(153, 153, 153));
+        passwordTextField.setText("password");
+        passwordTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordTextFieldFocusLost(evt);
+            }
+        });
+        jPanel2.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 260, 30));
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 51, 51));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logoutbuton.png"))); // NOI18N
         jButton3.setText("Logout");
+        jButton3.setOpaque(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 105, 21));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, 105, 21));
 
         jPanel5.setBackground(new java.awt.Color(0, 51, 51));
-
-        jLabel4.setFont(new java.awt.Font("Californian FB", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/admin-logo.png"))); // NOI18N
-        jLabel4.setText("Admin Login");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(462, 462, 462)
-                .addComponent(jLabel4)
-                .addContainerGap(506, Short.MAX_VALUE))
+            .addGap(0, 1100, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4))
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1100, -1));
@@ -138,30 +155,37 @@ public class LoginPage extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 10)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/admin-logo.png"))); // NOI18N
         jButton5.setText("SalesMan Login");
+        jButton5.setOpaque(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, 140, 30));
-
-        jLabel10.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel10.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("User Name:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
-
-        jLabel2.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel2.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Password:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, -1, -1));
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, 140, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logouper.png"))); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, -1, 82));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/S1.png"))); // NOI18N
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, 670));
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/admin-logo.png"))); // NOI18N
+        jLabel4.setText("Admin Login");
+        jLabel4.setOpaque(true);
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pass.png"))); // NOI18N
+        jLabel6.setOpaque(true);
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 30, 30));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/useric.png"))); // NOI18N
+        jLabel5.setOpaque(true);
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 30, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/log1.png"))); // NOI18N
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 1050, 670));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -220,7 +244,7 @@ public class LoginPage extends javax.swing.JFrame {
 
             }
             if(dbPassword!="" && inputPassword.equals(dbPassword)){
-                JOptionPane.showMessageDialog(this, "Login Successfully");
+                JOptionPane.showMessageDialog(this, "Login Successfully Welcome!");
                 this.setVisible(false);
                 new ShopMainHome().setVisible(true);
             }
@@ -230,6 +254,38 @@ public class LoginPage extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Login Information is Incorrect.Try Again");
             }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void usernameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusGained
+        if(usernameTextField.getText().trim().toLowerCase().equals("username"))
+        {
+            usernameTextField.setText("");
+            usernameTextField.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_usernameTextFieldFocusGained
+
+    private void usernameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFieldFocusLost
+        if(usernameTextField.getText().trim().equals("") || usernameTextField.getText().trim().toLowerCase().equals("username"))
+        {
+            usernameTextField.setText("username");
+            usernameTextField.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_usernameTextFieldFocusLost
+
+    private void passwordTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFieldFocusGained
+        		       if(passwordTextField.getText().trim().toLowerCase().equals("password"))
+        {
+            passwordTextField.setText("");
+            passwordTextField.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_passwordTextFieldFocusGained
+
+    private void passwordTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFieldFocusLost
+        if(passwordTextField.getText().trim().equals("") || passwordTextField.getText().trim().toLowerCase().equals("password"))
+        {
+            passwordTextField.setText("password");
+            passwordTextField.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_passwordTextFieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -272,10 +328,11 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel2;

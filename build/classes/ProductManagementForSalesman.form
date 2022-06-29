@@ -145,6 +145,7 @@
               <Image iconType="3" name="/updat.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Update"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateButtonActionPerformed"/>
@@ -161,6 +162,7 @@
               <Image iconType="3" name="/delete.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Delete"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteButtonActionPerformed"/>
@@ -267,6 +269,7 @@
               <Image iconType="3" name="/save.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addbuttonActionPerformed"/>
@@ -300,7 +303,7 @@
         <Component class="javax.swing.JButton" name="SearchButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/searchicon.png"/>
+              <Image iconType="3" name="/searchbut.png"/>
             </Property>
           </Properties>
           <Events>

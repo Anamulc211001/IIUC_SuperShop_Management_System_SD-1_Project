@@ -183,7 +183,7 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 183, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopmainback.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 250, 610, 343));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 230, 610, 343));
 
         jPanel4.setBackground(new java.awt.Color(0, 51, 51));
 
@@ -237,7 +237,7 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
         jLabel5.setText("Product Name:");
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/searchicon.png"))); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/searchbut.png"))); // NOI18N
         jButton10.setText("Search");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,7 +250,7 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(0, 0, 51));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,13 +261,13 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel9.setText("Available Product");
 
-        jTextField4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jTextField4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(0, 51, 51));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel10.setText("Brand");
 
-        jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jTextField5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -287,35 +287,35 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField5))
                 .addGap(58, 58, 58))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(75, 75, 75)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton10)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(138, 138, 138))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(4, 4, 4))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(4, 4, 4)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -328,6 +328,7 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel11.setText("Product Name:");
 
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/click1.png"))); // NOI18N
         jButton7.setText("Confirm!");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -347,6 +348,7 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel15.setText("Customer Name:");
 
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bank.png"))); // NOI18N
         jButton11.setText("PAY NOW!");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -388,7 +390,7 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
                         .addComponent(jButton7)
                         .addGap(56, 56, 56)
                         .addComponent(jButton11)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -582,11 +584,12 @@ public class ShopHomeForSalesman extends javax.swing.JFrame {
           txtbill.setText(txtbill.getText() +"Product_Name:  " + Product_Name + "\n");
           txtbill.setText(txtbill.getText() +"Quantity:  " + Quantity + "\n");
           txtbill.setText(txtbill.getText() +"Price:  " + Price + "\n");
-          txtbill.setText(txtbill.getText() +"Coustomer Name:  " + Coustomername+ "\n");
+          txtbill.setText(txtbill.getText() +"Coustomer Name:" + Customername+ "\n");
           txtbill.setText(txtbill.getText() + "\n");
           txtbill.setText(txtbill.getText() + "********************************************\n");
           
           txtbill.setText(txtbill.getText() + "           THANK YOU! COME AGAIN             \n");
+          txtbill.setText(txtbill.getText() + "           Happy Shopping             \n");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
